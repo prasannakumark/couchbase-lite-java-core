@@ -1,0 +1,79 @@
+/**
+ * Copyright (c) 2016 Couchbase, Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+ * either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.couchbase.lite;
+
+/**
+ * Options for _changes feed
+ *
+ * @exclude
+ */
+public class ChangesOptions {
+
+    private int limit = Integer.MAX_VALUE;
+    private boolean includeDocs = false;
+    private boolean includeConflicts = false;
+    private boolean sortBySequence = true;
+
+    public ChangesOptions() {
+    }
+
+    public ChangesOptions(int limit, boolean includeDocs, boolean includeConflicts, boolean sortBySequence) {
+        this.limit = limit;
+        this.includeDocs = includeDocs;
+        this.includeConflicts = includeConflicts;
+        this.sortBySequence = sortBySequence;
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public boolean isIncludeConflicts() {
+        return includeConflicts;
+    }
+
+    public void setIncludeConflicts(boolean includeConflicts) {
+        this.includeConflicts = includeConflicts;
+    }
+
+    public boolean isIncludeDocs() {
+        return includeDocs;
+    }
+
+    public void setIncludeDocs(boolean includeDocs) {
+        this.includeDocs = includeDocs;
+    }
+
+    public boolean isSortBySequence() {
+        return sortBySequence;
+    }
+
+    public void setSortBySequence(boolean sortBySequence) {
+        this.sortBySequence = sortBySequence;
+    }
+
+    @Override
+    public String toString() {
+        return "ChangesOptions{" +
+                "limit=" + limit +
+                ", includeDocs=" + includeDocs +
+                ", includeConflicts=" + includeConflicts +
+                ", sortBySequence=" + sortBySequence +
+                '}';
+    }
+}
